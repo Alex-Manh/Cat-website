@@ -1,0 +1,217 @@
+#content{
+    flex-wrap: wrap;
+}
+
+#content section{
+    display: flex;
+}
+
+/* Profile */
+#content #profile #dialogue{
+    padding: .8em;
+    border-radius: 10pt;
+    background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+
+}
+
+#content #profile #dialogue #continue{
+    padding: .3em;
+    text-align: right;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+#content #profile #dialogue #continue:hover{
+    color: #ffc34d;
+    cursor: pointer;
+}
+
+#content #profile #avatar{
+    border-radius: 50pt;
+    margin: 1em;
+    height: 5em;
+
+}
+
+/* Progress bar */
+
+#progress {
+    margin: 1em 1em;
+    width: 100%;
+    background-image: linear-gradient(-45deg, #93a5cf 0%, #e4efe9 100%);
+    padding: .2em .3em;
+    border-radius: 10pt;
+    opacity: 0.5;
+}
+  
+#bar{
+    width: 1%;
+    border-radius: 10pt;
+    background-color: rgba(128, 0, 0, 0.863);
+}
+
+/* Room display */
+#content #room{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: 0.5;
+    transition: .5s linear;
+}
+
+#content #room.display{
+    opacity: 1;
+}
+
+
+#content #room div{
+    margin: 1em;
+    padding: 1em;
+    background-color: #e6f7ff;
+} 
+
+#content #room.display .note, 
+#content #room.display img{
+    cursor: pointer;
+}
+
+#content #room .note-text{
+    display: none;
+    color: white;
+}
+
+#content #room .note-text li{
+    text-align: center;
+    border-radius: 6pt;
+    padding: .2em;
+    margin: .1em;
+    z-index: 1;
+}
+
+
+#content #room .note-text li a:link{
+    color: white;
+}
+#content #room .note-text li a:visited{
+    color: black;
+}
+
+#content #room div:first-child .note-text li{
+    background-color: rgba(235, 199, 0, 0.856);
+}
+
+#content #room div:nth-child(2) .note-text li{
+    background-color: rgba(4, 126, 14, 0.548);
+}
+#content #room div:last-child .note-text li{
+    background-color: rgba(33, 9, 87, 0.555);
+}
+
+#content #room.display .note-text.show {
+    display: inline;
+    visibility: hidden;
+    position: relative;
+    animation-name: slide;
+	animation-iteration-count: 1;
+	animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slide{
+    0%   {
+        visibility: visible;
+        left: 25%;
+    }
+    50%  {
+        left: 15%   
+    }
+    100% {
+        visibility: visible;
+        left: 0;
+    }
+}
+
+#content #room .note-text.show li:hover,
+#content #profile #avatar:hover{
+    animation-name: wiggle;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+    animation-timing-function: ease;
+}
+
+@keyframes wiggle{
+    0%{
+        transform: rotate(-5deg);
+    }
+    50%  {
+        transform: rotate(5deg);  
+    }
+    100% {
+        transform: rotate(-5deg);  
+    }
+}
+
+
+/* Popup articles */
+#content #room-popup{
+    position: fixed;
+	top: 0;
+    left: 0;
+    margin: 2em;
+	background: #e6f7ff;
+    visibility: hidden;
+    border: solid;
+    height: 80%;
+}
+
+#content #room-popup #text{
+	margin: 2em;
+}
+
+#content #room-popup .close-button a {
+	font-weight: bold;
+	text-decoration: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 1em;
+}
+
+#content #room-popup .close-button a:before {
+	content: "\2716";
+	padding-right: 5px;
+}
+
+body.popup{
+    overflow: hidden;
+}
+
+body.popup #content > :not(#room-popup){
+    opacity: .2;
+}
+
+body.popup #content #room-popup{
+    visibility: visible;
+    overflow: auto;
+}
+
+body.popup #content #room-popup #text article{
+    display: none;
+    margin: .5em;
+    padding: .5em;
+}
+
+body.popup #content #room-popup #text article.show-note{
+    display: block;
+}
+
+body.popup #content #room-popup #text article h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+body.popup #content #room-popup #text article img{
+    display: block;
+    margin: auto;
+}

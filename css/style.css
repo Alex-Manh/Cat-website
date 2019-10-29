@@ -1,0 +1,120 @@
+/*  General */
+
+body {
+	font-family: 'Handlee', cursive;
+	font-size: 1.3em;
+	line-height: 1.5em;
+	background-image: url("/images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 1em;
+}
+
+h1{
+	font-size: 2.5em;
+	margin: .2em;
+	padding: .2em;
+	font-family: 'Just Me Again Down Here', cursive;
+	text-transform: uppercase;
+}
+
+h2{
+	font-family: 'Indie Flower', cursive;
+	font-weight: normal;
+	font-size: 1.4em;
+	margin: .1em;
+	padding: .1em;
+}
+
+h3{
+	font-weight: normal;
+	font-size: 1.2em;
+	margin: .1em;
+	padding: .1em;
+}
+
+a{
+	text-decoration: none;
+	color: black;
+}
+
+a:hover{
+	color: white;
+}
+
+a:active{
+	color: #ffc34d;
+}
+
+ul{
+	list-style: none;
+}
+/*  The menu */
+#menu{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin: 1em;
+	padding: 1em;
+}
+
+#menu div{
+	width: 50%;
+}
+
+#menu .head{
+	display: flex;
+	justify-content: flex-end;
+}
+
+#menu .head *{
+	text-shadow: 2px 2px #8f8585;
+	margin: .1em;
+	background-color: rgba(236, 236, 236, 0.692);
+}
+
+/* Banner */
+#banner{
+	opacity: .85;
+	padding: .3em;
+	text-align: center;
+	font-style: italic;
+	border-style: outset;
+	border: 1pt black solid;
+	border-radius: 5em 50em 20em;
+	background: #e6f7ff;
+
+}
+
+/* Main content */
+#content{
+	margin: 2em 1em;
+	padding: 1em;
+	display: flex;
+	align-items: flex-end;
+	
+}
+
+/* Media  */
+@media only screen and (max-width: 400px) {
+	/* Increase font size for smaller device */
+
+	body {
+		font-size: 6em;
+		line-height: 1.5em;
+	}
+
+	h1{
+		font-size: 7em;
+	}
+	
+	h2{
+		font-size: 6.5em;
+	}
+	h3{
+		font-size: 6em;
+	}
+}
+
+
+
